@@ -112,7 +112,7 @@ ad_proc -public template::diagram::create {
                            See <a href="/api-doc/proc-view?proc=template::diagram::element::create">template::diagram::element::create</a> for details.
     @param  template       The template to use for the rendering. Currently there is support only for Javascript based diagrams. They have been tested for firefox, IE, Opera, safari and camino.
                            Other ways to generated the diagrams can be integrated by writing your own templates and for instance using GNUPlot.
-                           The current templates availabe are: "curve", "pie" and "cockpit"
+                           The current templates available are: "curve", "pie" and "cockpit"
 
     @see template::diagram::element::create
     @author Nima Mazloumi (nima.mazloumi@gmx.de)
