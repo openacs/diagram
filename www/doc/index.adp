@@ -6,7 +6,7 @@ by <a href="mailto:nima.mazloumi@gmx.de">Nima Mazloumi</a>, and with help of <a 
 <p>This package extends the templating system of OpenACS by providing another
 builder next to the list and form builder. The diagram builder is very similar
 to the list builder. Two differences are important though: The multirow to be
-used must me defined bofore <a href="/api-doc/proc-view?proc=template::diagram::create">template::diagram::create</a> is called since the
+used must me defined before <a href="/api-doc/proc-view?proc=template::diagram::create">template::diagram::create</a> is called since the
 column names are retrieved dynamically.
 </p>
 <p>
