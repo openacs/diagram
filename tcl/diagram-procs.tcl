@@ -329,8 +329,8 @@ ad_proc -private template::diagram::set_borders {
     set y_max ""
 
     set scales $diagram_properties(scales)
-    set minima [list]
-    set sum [list]
+    set minima {}
+    set sum {}
 
     #lets iterate over all columns and get the borders
     for {set j 1} {$j <= [llength $diagram_properties(display_elements)]} {incr j} {
@@ -446,7 +446,7 @@ ad_proc -private template::diagram::write_csv {
     set __output {}
 
     # Output header row
-    set __cols [list]
+    set __cols {}
     foreach __element_name $diagram_properties(display_elements) {
         lappend __cols [csv_quote $__element_name]
     }
@@ -455,7 +455,7 @@ ad_proc -private template::diagram::write_csv {
     # Output rows
     template::multirow foreach $diagram_properties(multirow) {
 
-        set __cols [list]
+        set __cols {}
 
         foreach __element_name $diagram_properties(display_elements) {
             template::diagram::element::get_reference \
