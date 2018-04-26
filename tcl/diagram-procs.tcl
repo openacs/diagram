@@ -303,7 +303,7 @@ ad_proc -private template::diagram::set_borders {
     set diagram_properties(count) $count
 
     for {set j 1} {$j <= [llength $diagram_properties(display_elements)]} {incr j} {
-	set col$j [list] 
+	set col$j {} 
     }
 
     #iterate over the multirow
@@ -343,7 +343,7 @@ ad_proc -private template::diagram::set_borders {
 
 	#we need to update min and max
 
-	set list [list]
+	set list {}
 
 	#its the x axis
 	if {$xy == 1} {
