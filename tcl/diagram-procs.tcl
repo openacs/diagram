@@ -303,7 +303,7 @@ ad_proc -private template::diagram::set_borders {
     set diagram_properties(count) $count
 
     for {set j 1} {$j <= [llength $diagram_properties(display_elements)]} {incr j} {
-	set col$j {} 
+	set col$j [list] 
     }
 
     #iterate over the multirow
@@ -329,8 +329,8 @@ ad_proc -private template::diagram::set_borders {
     set y_max ""
 
     set scales $diagram_properties(scales)
-    set minima {}
-    set sum {}
+    set minima [list]
+    set sum [list]
 
     #lets iterate over all columns and get the borders
     for {set j 1} {$j <= [llength $diagram_properties(display_elements)]} {incr j} {
@@ -343,7 +343,7 @@ ad_proc -private template::diagram::set_borders {
 
 	#we need to update min and max
 
-	set list {}
+	set list [list]
 
 	#its the x axis
 	if {$xy == 1} {
@@ -446,7 +446,7 @@ ad_proc -private template::diagram::write_csv {
     set __output {}
 
     # Output header row
-    set __cols {}
+    set __cols [list]
     foreach __element_name $diagram_properties(display_elements) {
         lappend __cols [csv_quote $__element_name]
     }
@@ -455,7 +455,7 @@ ad_proc -private template::diagram::write_csv {
     # Output rows
     template::multirow foreach $diagram_properties(multirow) {
 
-        set __cols {}
+        set __cols [list]
 
         foreach __element_name $diagram_properties(display_elements) {
             template::diagram::element::get_reference \
