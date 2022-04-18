@@ -529,15 +529,8 @@ ad_proc -private template::diagram::template {
     }
     set file_stub "[acs_root_dir]/packages/diagram/resources/diagram/$template"
 
-    # ensure that the template template has been compiled and is up-to-date
-    template::adp_init adp $file_stub
-
-    # get result of template output procedure into __adp_output
-    # the only data source on which this template depends is the "elements"
-    # multirow data source.  The output of this procedure will be
-    # placed in __adp_output in this stack frame.
-   
-    template::code::adp::$file_stub
+    # ensure that the template template has been compiled and is up-to-date, and call it.
+    [template::adp_init adp $file_stub]
 
     return $__adp_output
 }
